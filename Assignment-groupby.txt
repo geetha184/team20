@@ -1,0 +1,64 @@
+1) Display BUS_code  wise number of buses
+select bus_code, count(bus_id)
+from bus
+group by bus_code
+
+2)Display No_of_seats wise number of buses
+select no_of_seats, count(bus_id)
+from bus
+group by no_of_seats
+
+3)Display which type buscode have bus number count equal to 2
+select bus_code, count(bus_id)
+from bus
+group by bus_code
+having count(bus_id) = 2
+
+------------------------------------------------------------------
+
+1.inquiry type wise number of customer
+select cust_name, count(inquiry_id)
+from customer c left join inquiry i
+on c.cust_id = i.cust_id
+group by cust_name
+
+
+2. customer wise number of inquiry made
+select cust_name, count(inquiry_id)
+from customer c left join inquiry i
+on c.cust_id = i.cust_id
+group by cust_name
+
+3.which customer made more than 2 inquiry
+select cust_name, count(inquiry_id)
+from customer c left join inquiry i
+on c.cust_id = i.cust_id
+group by cust_name
+having count(inquiry_id) > 2
+
+4. Display gender wise count of customer
+select gender, count(cust_id)
+from customer
+group by gender
+
+5.Customer state wise inquiry made
+select cust_state, count(cust_id)
+from customer
+group by cust_state
+
+----------------------------------------------------------
+
+1)Manuafture wise Product count
+
+select m_name, count(p_id)
+from manufacturer m left join product p
+on m.m_code = p.p_id
+group by m_name
+
+
+
+
+
+
+
+
